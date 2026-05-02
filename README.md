@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 📊 Coding Profile Analyzer
 
 A Spring Boot-based web application that aggregates coding activity from multiple competitive programming platforms and provides unified analytics like difficulty distribution, solved problems, and platform-wise insights.
@@ -127,3 +128,7 @@ Built by Khushnuma Parween
 A project focused on improving backend skills, API integration, and real-world system design understanding.
 
 ---
+=======
+# SpringBootProjects
+Contains Projects Like Coding Profile Analyzer and GithubPro
+>>>>>>> 2ca379be1680fdb6e0787b9e68dbcba7f215c6c8
