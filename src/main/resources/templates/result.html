@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Results for: <span th:text="${username}"></span></h2>
+
+<p>
+    LeetCode:
+    <span th:text="${leetcode} ? 'Exists ✅' : 'Not Found ❌'"></span>
+</p>
+
+<p>
+    Codeforces:
+    <span th:text="${codeforces} ? 'Exists ✅' : 'Not Found ❌'"></span>
+</p>
+</body>
+</html>

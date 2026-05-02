@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analyzer</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+
+<form action="/check" method="post">
+    <input type="text" name="username" placeholder="Enter username" required>
+    <button type="submit">Check</button>
+</form>
+
+<div class="container">
+    <form action="/analyze" method="get">
+
+        <h2>Profile Analyzer</h2>
+
+        <label>Codeforces Username:</label>
+        <input type="text" name="cfUsername" required>
+
+        <label>LeetCode Username:</label>
+        <input type="text" name="lcUsername">
+
+        <button type="submit">Analyze</button>
+    </form>
+</div>
+<!--<form action="/analyze" method="get">-->
+
+<!--    <label>Codeforces Username:</label>-->
+<!--    <input type="text" name="cfUsername" required>-->
+
+<!--    <br><br>-->
+
+<!--    <label>LeetCode Username:</label>-->
+<!--    <input type="text" name="lcUsername">-->
+
+<!--    <br><br>-->
+
+<!--    <button type="submit">Analyze</button>-->
+<!--</form>-->
+
+
+</body>
+</html>

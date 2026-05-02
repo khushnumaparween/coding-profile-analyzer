@@ -1,0 +1,162 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--  <title>Dashboard</title>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<h2>Problems</h2>-->
+
+<!--<table border="1">-->
+<!--  <tr>-->
+<!--    <th>Title</th>-->
+<!--    <th>Difficulty</th>-->
+<!--    <th>Platform</th>-->
+<!--  </tr>-->
+
+<!--  <tr th:each="p : ${problems}">-->
+<!--    <td>-->
+<!--      <a th:href="${p.url}" target="_blank"-->
+<!--         th:text="${p.title}"></a>-->
+<!--    </td>-->
+<!--    <td th:text="${p.difficulty}"></td>-->
+<!--    <td th:text="${p.platform}"></td>-->
+<!--  </tr>-->
+<!--</table>-->
+<!--<table border="1">-->
+<!--  <tr>-->
+<!--    <th>Title</th>-->
+<!--    <th>Difficulty</th>-->
+<!--    <th>Platform</th>-->
+<!--  </tr>-->
+
+<!--  <tr th:each="p : ${problems}">-->
+<!--    <td>-->
+<!--      <a th:href="${p.url}" target="_blank"-->
+<!--         th:text="${p.title}"></a>-->
+<!--    </td>-->
+<!--&lt;!&ndash;    <td th:text="${p.title}"></td>&ndash;&gt;-->
+<!--    <td th:text="${p.difficulty}"></td>-->
+<!--    <td th:text="${p.platform}"></td>-->
+<!--  </tr>-->
+<!--</table>-->
+
+<!--  <h2 th:text="'Analysis for ' + ${username}"></h2>-->
+
+<!--  <div>-->
+<!--    <p>Total Solved: <b th:text="${totalCount}"></b></p>-->
+<!--    <p>Easy: <b th:text="${easyCount}"></b></p>-->
+<!--    <p>Medium: <b th:text="${mediumCount}"></b></p>-->
+<!--    <p>Hard: <b th:text="${hardCount}"></b></p>-->
+<!--  </div>-->
+
+
+<!--<div>-->
+<!--  <a th:href="@{/analyze(username=${username})}">All</a> |-->
+<!--  <a th:href="@{/analyze(username=${username}, difficulty='Easy')}">Easy</a> |-->
+<!--  <a th:href="@{/analyze(username=${username}, difficulty='Medium')}">Medium</a> |-->
+<!--  <a th:href="@{/analyze(username=${username}, difficulty='Hard')}">Hard</a>-->
+<!--</div>-->
+
+
+
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+
+<div class="container">
+
+  <h2 th:text="'Analysis for ' + ${cfUsername}"></h2>
+
+  <div class="card stats">
+    <p>Total Solved: <b th:text="${totalCount}"></b></p>
+    <p>Easy: <b th:text="${easyCount}"></b></p>
+    <p>Medium: <b th:text="${mediumCount}"></b></p>
+    <p>Hard: <b th:text="${hardCount}"></b></p>
+    <p>Unknown: <b th:text="${unknownCount}"></b></p>
+  </div>
+
+  <div class="filters">
+    <a th:href="@{/analyze(cfUsername=${cfUsername}, lcUsername=${lcUsername})}">All</a>
+    <a th:href="@{/analyze(cfUsername=${cfUsername}, lcUsername=${lcUsername}, difficulty='Easy')}">Easy</a>
+    <a th:href="@{/analyze(cfUsername=${cfUsername}, lcUsername=${lcUsername}, difficulty='Medium')}">Medium</a>
+    <a th:href="@{/analyze(cfUsername=${cfUsername}, lcUsername=${lcUsername}, difficulty='Hard')}">Hard</a>
+    <a th:href="@{/analyze(cfUsername=${cfUsername}, lcUsername=${lcUsername}, difficulty='Unknown')}">Unknown</a>
+  </div>
+
+  <br>
+
+  <div class="card">
+    <h2>Problems</h2>
+
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Difficulty</th>
+        <th>Platform</th>
+      </tr>
+
+      <tr th:each="p : ${problems}">
+        <td>
+          <a th:href="${p.url}" target="_blank"
+             th:text="${p.title}"></a>
+        </td>
+        <td th:text="${p.difficulty}"></td>
+        <td th:text="${p.platform}"></td>
+      </tr>
+    </table>
+  </div>
+
+</div>
+
+<!--<h2 th:text="'Analysis for ' + ${username}"></h2>-->
+
+<!--&lt;!&ndash; 🔹 Stats Section &ndash;&gt;-->
+<!--<div>-->
+<!--  <p>Total Solved: <b th:text="${totalCount}"></b></p>-->
+<!--  <p>Easy: <b th:text="${easyCount}"></b></p>-->
+<!--  <p>Medium: <b th:text="${mediumCount}"></b></p>-->
+<!--  <p>Hard: <b th:text="${hardCount}"></b></p>-->
+<!--  <p>Unknown: <b th:text="${unknownCount}"></b></p>-->
+<!--</div>-->
+
+<!--&lt;!&ndash; 🔹 Filter Buttons &ndash;&gt;-->
+<!--<div>-->
+<!--  <a th:href="@{/analyze(username=${username})}">All</a> |-->
+<!--  <a th:href="@{/analyze(username=${username}, difficulty='Easy')}">Easy</a> |-->
+<!--  <a th:href="@{/analyze(username=${username}, difficulty='Medium')}">Medium</a> |-->
+<!--  <a th:href="@{/analyze(username=${username}, difficulty='Hard')}">Hard</a>-->
+<!--  <a th:href="@{/analyze(username=${username}, difficulty='Unknown')}">Unknown</a>-->
+<!--</div>-->
+
+<!--<br>-->
+
+<!--<h2>Problems</h2>-->
+
+<!--&lt;!&ndash; 🔹 Single Table &ndash;&gt;-->
+<!--<table border="1">-->
+<!--  <tr>-->
+<!--    <th>Title</th>-->
+<!--    <th>Difficulty</th>-->
+<!--    <th>Platform</th>-->
+<!--  </tr>-->
+
+<!--  <tr th:each="p : ${problems}">-->
+<!--    <td>-->
+<!--      <a th:href="${p.url}" target="_blank"-->
+<!--         th:text="${p.title}"></a>-->
+<!--    </td>-->
+<!--    <td th:text="${p.difficulty}"></td>-->
+<!--    <td th:text="${p.platform}"></td>-->
+<!--  </tr>-->
+<!--</table>-->
+
+</body>
+</html>
