@@ -21,11 +21,6 @@ public class UsernameController {
     public String home() {
         return "username";
     }
-//
-//    @GetMapping("/")
-//    public String home() {
-//        return "index";
-//    }
 
     @PostMapping("/check")
     public String checkUsername(@RequestParam String username, Model model) {
